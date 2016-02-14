@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "outDir": "../.tmp"
+    },
+    "filesGlob": [
+        "scripts/**/*.ts",
+        "typings/tsd.d.ts"
+    ],
+    "files": [
+        "scripts/app.ts",
+        "scripts/myCtrl.ts",
+        "typings/tsd.d.ts"
+    ]
+}

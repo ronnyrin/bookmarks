@@ -27,12 +27,11 @@ module.exports = function (config) {
       'app/bower_components/jquery/jquery.js',
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/angular-translate/angular-translate.js',
       'app/bower_components/uri.js/src/URI.js',
       '{app,.tmp}/*.js',
       '{app,.tmp}/scripts/*.js',
       '{app,.tmp}/scripts/*/**/*.js',
-      '{,.tmp/}test/**/*.js',
+      '{app,.tmp}/test/**/*.js',
       '{app,.tmp}/views/**/*.html'
     ],
 

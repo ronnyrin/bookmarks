@@ -11,10 +11,18 @@
     <script src="bower_components/angular/angular.js"></script>
 
     <script src="scripts/app.js"></script>
-    <script src="scripts/myCtrl.js"></script>
+    <script src="scripts/mainCtrl.js"></script>
 
-    <div ng-controller="myCtrl">
-    data2:{{data}}
+    <div ng-controller="mainController">
+        <button ng-click="addBookmark()">Add</button>
+        <ul>
+            <li ng-repeat="bookmark in bookmarks">
+                {{bookmark.id}}<br/>
+                {{bookmark.title}}<br/>
+                {{bookmark.creationDate}}<br/>
+                <button ng-click="removeBookmark($index)">Delete</button>
+            </li>
+        </ul>
     </div>
   </body>
 </html>

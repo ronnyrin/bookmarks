@@ -6,8 +6,12 @@
 
 class MainController {
 
+    predicate:string;
+    reverse:boolean;
 
     constructor(private bookmarksService:BookmarksService) {
+        this.predicate = 'creationDate';
+        this.reverse = true;
     }
 
     addBookmark = () => {

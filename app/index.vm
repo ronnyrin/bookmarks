@@ -1,35 +1,38 @@
 <!doctype html>
 <html ng-app="projectsApp">
-  <head>
-    <title>Bookmarks</title>
+    <head>
+        <title>Bookmarks</title>
 
-    <link rel="stylesheet" href="styles/main.css">
-  </head>
-  <body>
-    
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    <body>
 
-    <script src="scripts/app.js"></script>
-    <script src="scripts/mainCtrl.js"></script>
-      <script src="scripts/bookmarksService.js"></script>
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
 
-    <div ng-controller="mainController as main">
-        <section>
-            <span>Search:</span>
-            <div>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/mainCtrl.js"></script>
+        <script src="scripts/bookmarksService.js"></script>
+
+        <div ng-controller="mainController as main">
+            <section class="filters">
+                <span>Search:</span>
                 <input type="text" ng-model="searchText" placeholder="type here.."/>
-            </div>
-        </section>
-        <button ng-click="main.addBookmark()">Add</button>
-        <ul>
-            <li ng-repeat="bookmark in main.bookmarks | filter:searchText">
-                {{bookmark.id}}<br/>
-                {{bookmark.title}}<br/>
-                {{bookmark.creationDate | date: 'MMM d,yyyy'}}<br/>
-                <button ng-click="main.removeBookmark($index)">Delete</button>
-            </li>
-        </ul>
-    </div>
-  </body>
+                <span>Order By:</span>
+                <select ng-model="main.predicate">
+                    <option value="creationDate">By Date</option>
+                    <option value="title">By Title</option>
+                </select>
+            </section>
+            <button ng-click="main.addBookmark()">Add</button>
+            <ul>
+                <li ng-repeat="bookmark in main.bookmarks | filter:searchText | orderBy:main.predicate:main.reverse">
+                    {{bookmark.id}}<br/>
+                    {{bookmark.title}}<br/>
+                    {{bookmark.creationDate | date: 'MMM d,yyyy'}}<br/>
+                    <button ng-click="main.removeBookmark($index)">Delete</button>
+                </li>
+            </ul>
+        </div>
+    </body>
 </html>

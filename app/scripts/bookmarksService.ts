@@ -10,6 +10,7 @@ interface IBookmark {
 
 class BookmarksService {
     bookmarks:IBookmark[];
+
     constructor() {
         this.bookmarks = [
             {

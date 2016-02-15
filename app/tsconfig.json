@@ -8,9 +8,9 @@
     ],
     "files": [
         "scripts/app.ts",
-        "scripts/bookmarksService.ts",
-        "scripts/mainCtrl.ts",
-        "scripts/myCtrl.ts",
+        "scripts/services/bookmarksService.ts",
+        "scripts/controllers/mainCtrl.ts",
+        "scripts/controllers/myCtrl.ts",
         "typings/tsd.d.ts"
     ]
 }

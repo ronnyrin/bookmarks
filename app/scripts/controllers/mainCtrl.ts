@@ -12,12 +12,8 @@ class MainController {
         this.reverse = true;
     }
 
-    addBookmark(bookmark) {
-        bookmark = {
-            'id': 4,
-            'title': 'bookmark4',
-            'creationDate': '1455978791608'
-        };
+    addBookmark() {
+        var bookmark:IBookmark = this.bookmarksService.create('some title');
         this.bookmarksService.add(bookmark);
     };
 

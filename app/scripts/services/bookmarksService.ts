@@ -31,6 +31,14 @@ class BookmarksService {
         ];
     }
 
+    create(title):IBookmark {
+        return {
+            'id': 4,
+            'title': title,
+            'creationDate': Date.now()
+        }
+    }
+
     add(bookmark) {
         this.bookmarks.push(bookmark);
     };

@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="projectsApp">
   <head>
-    <title>projects</title>
+    <title>Bookmarks</title>
 
     <link rel="stylesheet" href="styles/main.css">
   </head>
@@ -14,12 +14,18 @@
     <script src="scripts/mainCtrl.js"></script>
 
     <div ng-controller="mainController as main">
+        <section>
+            <span>Search:</span>
+            <div>
+                <input type="text" ng-model="searchText" placeholder="type here.."/>
+            </div>
+        </section>
         <button ng-click="main.addBookmark()">Add</button>
         <ul>
-            <li ng-repeat="bookmark in main.bookmarks">
+            <li ng-repeat="bookmark in main.bookmarks | filter:searchText">
                 {{bookmark.id}}<br/>
                 {{bookmark.title}}<br/>
-                {{bookmark.creationDate}}<br/>
+                {{bookmark.creationDate | date: 'MMM d,yyyy'}}<br/>
                 <button ng-click="main.removeBookmark($index)">Delete</button>
             </li>
         </ul>

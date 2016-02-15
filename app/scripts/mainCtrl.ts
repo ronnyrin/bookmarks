@@ -6,10 +6,6 @@ class Bookmark {
     id:number;
     title:string;
     creationDate:any;
-
-    constructor() {
-
-    }
 }
 
 class MainController {
@@ -20,17 +16,17 @@ class MainController {
             {
                 'id': 1,
                 'title': 'bookmark1',
-                'creationDate': '1455275400'
+                'creationDate': '1455540591608'
             },
             {
                 'id': 2,
                 'title': 'bookmark2',
-                'creationDate': '1455102600'
+                'creationDate': '1125540511608'
             },
             {
                 'id': 3,
                 'title': 'bookmark3',
-                'creationDate': '1452424200'
+                'creationDate': '1452510591608'
             }
         ];
     }
@@ -40,7 +36,7 @@ class MainController {
             {
                 'id': 4,
                 'title': 'bookmark4',
-                'creationDate': '1455202600'
+                'creationDate': '1455978791608'
             }
         );
     };

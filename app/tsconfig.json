@@ -8,6 +8,7 @@
     ],
     "files": [
         "scripts/app.ts",
+        "scripts/bookmarksService.ts",
         "scripts/mainCtrl.ts",
         "scripts/myCtrl.ts",
         "typings/tsd.d.ts"

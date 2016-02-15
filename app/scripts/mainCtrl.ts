@@ -1,9 +1,21 @@
 /**
  * Created by ronnyr on 14/02/2016.
  */
-angular
-    .module('projectsApp')
-    .controller('mainController', function () {
+
+class Bookmark {
+    id:number;
+    title:string;
+    creationDate:any;
+
+    constructor() {
+
+    }
+}
+
+class MainController {
+    bookmarks:Bookmark[];
+
+    constructor() {
         this.bookmarks = [
             {
                 'id': 1,
@@ -21,18 +33,21 @@ angular
                 'creationDate': '1452424200'
             }
         ];
+    }
 
-        this.addBookmark = function () {
-            this.bookmarks.push(
-                {
-                    'id': 4,
-                    'title': 'bookmark4',
-                    'creationDate': '1455202600'
-                }
-            );
-        };
+    addBookmark = () => {
+        this.bookmarks.push(
+            {
+                'id': 4,
+                'title': 'bookmark4',
+                'creationDate': '1455202600'
+            }
+        );
+    };
 
-        this.removeBookmark = function (index) {
-            this.bookmarks.splice(index, 1);
-        };
-    });
+    removeBookmark = (index:number) => this.bookmarks.splice(index, 1);
+}
+
+angular
+    .module('projectsApp')
+    .controller('mainController', MainController);

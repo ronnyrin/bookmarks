@@ -31,17 +31,13 @@ class BookmarksService {
         ];
     }
 
-    add = () => {
-        this.bookmarks.push(
-            {
-                'id': 4,
-                'title': 'bookmark4',
-                'creationDate': '1455978791608'
-            }
-        );
+    add(bookmark) {
+        this.bookmarks.push(bookmark);
     };
 
-    remove = (index:number) => this.bookmarks.splice(index, 1);
+    remove(index:number) {
+        this.bookmarks.splice(index, 1);
+    }
 }
 
 angular

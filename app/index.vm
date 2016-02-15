@@ -12,6 +12,7 @@
 
     <script src="scripts/app.js"></script>
     <script src="scripts/mainCtrl.js"></script>
+      <script src="scripts/bookmarksService.js"></script>
 
     <div ng-controller="mainController as main">
         <section>

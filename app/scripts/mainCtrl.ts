@@ -3,8 +3,8 @@
  */
 angular
     .module('projectsApp')
-    .controller('mainController', function ($scope) {
-        $scope.bookmarks = [
+    .controller('mainController', function () {
+        this.bookmarks = [
             {
                 'id': 1,
                 'title': 'bookmark1',
@@ -22,8 +22,8 @@ angular
             }
         ];
 
-        $scope.addBookmark = function () {
-            $scope.bookmarks.push(
+        this.addBookmark = function () {
+            this.bookmarks.push(
                 {
                     'id': 4,
                     'title': 'bookmark4',
@@ -32,7 +32,7 @@ angular
             );
         };
 
-        $scope.removeBookmark = function (index) {
-            $scope.bookmarks.splice(index,1);
+        this.removeBookmark = function (index) {
+            this.bookmarks.splice(index, 1);
         };
     });

@@ -2,7 +2,7 @@
  * Created by ronnyr on 14/02/2016.
  */
 
-class MainController {
+class BookmarksListControllers {
 
     predicate:string;
     reverse:boolean;
@@ -28,4 +28,9 @@ class MainController {
 
 angular
     .module('projectsApp')
-    .controller('mainController', MainController);
+    .controller('bookmarksListControllers', BookmarksListControllers)
+    .component('bookmarksList',{
+        controller: 'bookmarksListControllers',
+        templateUrl: 'scripts/components/bookmarks-list/bookmarks-list.html',
+    });
+

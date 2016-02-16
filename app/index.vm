@@ -11,26 +11,16 @@
         <script src="bower_components/angular/angular.js"></script>
 
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/mainCtrl.js"></script>
+        <script src="scripts/components/bookmarks-list/bookmarks-list.js"></script>
+        <script src="scripts/components/bookmark/bookmark.js"></script>
+        <script src="scripts/components/login/login.js"></script>
+        <script src="scripts/components/signup/signup.js"></script>
         <script src="scripts/services/bookmarksService.js"></script>
-        <script src="scripts/directives/bookmarkDirective.js"></script>
 
-        <div ng-controller="mainController as main">
-            <section class="filters">
-                <span>Search:</span>
-                <input type="text" ng-model="searchText.title" placeholder="type here.."/>
-                <span>Order By:</span>
-                <select ng-model="main.predicate">
-                    <option value="creationDate">By Date</option>
-                    <option value="title">By Title</option>
-                </select>
-            </section>
-            <button ng-click="main.addBookmark()">Add</button>
-            <ul>
-                <li ng-repeat="bookmark in main.bookmarks | filter:searchText | orderBy:main.predicate:main.reverse">
-                    <bookmark bookmark="bookmark" on-bookmark-remove="main.removeBookmark(bookmark.id)"></bookmark>
-                </li>
-            </ul>
-        </div>
+        <login></login>
+        <hr>
+        <signup></signup>
+        <hr>
+        <bookmarks-list></bookmarks-list>
     </body>
 </html>

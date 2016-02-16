@@ -1,7 +1,7 @@
 var app = angular
     .module('projectsApp', ['ui.router']);
 
-app.config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/login');
     $stateProvider
         .state('login', {

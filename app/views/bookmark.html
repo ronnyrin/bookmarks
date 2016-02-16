@@ -1,0 +1,5 @@
+<div>{{bookmark.id}} </div>
+<div>{{bookmark.title}}</div>
+<div>{{bookmark.creationDate | date: 'MMM d,yyyy'}}</div>
+<div><button ng-click="onBookmarkRemove({id:bookmark.id})">Delete</button></div>
+

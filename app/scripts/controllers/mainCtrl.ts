@@ -17,8 +17,8 @@ class MainController {
         this.bookmarksService.add(bookmark);
     };
 
-    removeBookmark(index:number) {
-        this.bookmarksService.remove(index);
+    removeBookmark(id:number) {
+        this.bookmarksService.remove(id);
     }
 
     get bookmarks() {

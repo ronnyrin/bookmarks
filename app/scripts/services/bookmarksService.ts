@@ -10,6 +10,7 @@ interface IBookmark {
 
 class BookmarksService {
     bookmarks:IBookmark[];
+
     constructor() {
         this.bookmarks = [
             {
@@ -23,7 +24,7 @@ class BookmarksService {
                 'creationDate': '1125540511608'
             },
             {
-                'id': 3,
+                'id': 4,
                 'title': 'bookmark3',
                 'creationDate': '1452510591608'
             }
@@ -42,7 +43,17 @@ class BookmarksService {
         this.bookmarks.push(bookmark);
     };
 
-    remove(index:number) {
+    findById(id) {
+        for (var i = 0; i < this.bookmarks.length; i++) {
+            if (this.bookmarks[i].id === id) {
+                return i;
+            }
+        }
+        return -1;
+    };
+
+    remove(id:number) {
+        var index = this.findById(id);
         this.bookmarks.splice(index, 1);
     }
 }

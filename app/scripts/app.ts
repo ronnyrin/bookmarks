@@ -1,3 +1,21 @@
 var app = angular
-    .module('projectsApp', []);
+    .module('projectsApp', ['ui.router']);
 
+app.config(function ($stateProvider, $urlRouterProvider,$locationProvider) {
+    $urlRouterProvider.otherwise('/login');
+    $stateProvider
+        .state('login', {
+            url: '/login',
+            template: '<login></login>'
+        })
+        .state('signup', {
+            url: '/signup',
+            template: '<signup></signup>'
+        })
+        .state('list', {
+            url: '/list',
+            template: '<bookmarks-list></bookmarks-list>'
+        });
+
+    $locationProvider.html5Mode(false);
+});

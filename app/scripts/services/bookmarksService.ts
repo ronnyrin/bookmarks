@@ -5,7 +5,6 @@
 declare var Firebase:any;
 
 interface IBookmark {
-    id:number;
     title:string;
     creationDate:any;
 }
@@ -22,7 +21,6 @@ class BookmarksService {
 
     create(title):IBookmark {
         return {
-            'id': 4,
             'title': title,
             'creationDate': Date.now()
         }
@@ -58,9 +56,8 @@ class BookmarksService {
         //});
     }
 
-    remove(id:number) {
-        var index = this.findById(id);
-        this.bookmarks.$remove(index);
+    remove(bookmark) {
+        this.bookmarks.$remove(bookmark);
     }
 }
 

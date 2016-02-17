@@ -26,8 +26,8 @@ class BookmarksListControllers {
         this.bookmarksService.add(bookmark);
     };
 
-    removeBookmark(id:number) {
-        this.bookmarksService.remove(id);
+    removeBookmark(bookmark) {
+        this.bookmarksService.remove(bookmark);
     }
 }
 

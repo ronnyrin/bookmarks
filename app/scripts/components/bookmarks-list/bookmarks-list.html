@@ -11,7 +11,7 @@
                 <option value="title">By Title</option>
             </select>
         </section>
-        <button ng-click="$ctrl.addBookmark()">Add</button>
+        <button class="btn btn-primary" ng-click="$ctrl.addBookmark()">Add</button>
         <bookmark ng-repeat="bookmark in $ctrl.bookmarks | filter:searchText | orderBy:$ctrl.predicate:$ctrl.reverse"
                   bookmark="bookmark" on-bookmark-remove="$ctrl.removeBookmark(bookmark)"></bookmark>
     </div>

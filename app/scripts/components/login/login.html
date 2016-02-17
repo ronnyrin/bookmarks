@@ -1,17 +1,18 @@
 <h1>Login</h1>
 <form name="loginForm" ng-submit="loginForm.$valid && $ctrl.login(user)" novalidate>
-    <div>
-        <input type="email" name="email" placeholder="Email" ng-model="user.email" required/>
+    <div class="form-group">
+        <input class="form-control" type="email" name="email" placeholder="Email" ng-model="user.email" required/>
         <span ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched || loginForm.$submitted"><div
                 ng-messages-include="views/messages.html"></div></span>
     </div>
-    <div>
-        <input type="password" name="password" placeholder="Password" ng-model="user.password" required minlength="6">
+    <div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="Password" ng-model="user.password"
+               required minlength="6">
          <span ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched || loginForm.$submitted"><div
                  ng-messages-include="views/messages.html"></div></span>
     </div>
-    <div>
-        <input type="submit" value="Login">
+    <div class="form-group">
+        <input class="btn btn-primary" type="submit" value="Login">
     </div>
 </form>
 <hr>

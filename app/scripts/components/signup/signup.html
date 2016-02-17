@@ -1,27 +1,29 @@
 <h1>Sign Up</h1>
 <form name="registrationForm" ng-submit="registrationForm.$valid && $ctrl.register()" novalidate>
-    <div>
-        <input type="email" name="email" placeholder="Email" ng-model="$ctrl.user.email" required>
+    <div class="form-group">
+        <input class="form-control" type="email" name="email" placeholder="Email" ng-model="$ctrl.user.email" required>
         <span ng-messages="registrationForm.email.$error"
               ng-show="registrationForm.email.$touched || registrationForm.$submitted"><div
                 ng-messages-include="views/messages.html"></div></span>
     </div>
-    <div>
-        <input type="password" name="password" placeholder="Password" ng-model="$ctrl.user.password" required
+    <div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="Password"
+               ng-model="$ctrl.user.password" required
                minlength="6">
         <span ng-messages="registrationForm.password.$error"
               ng-show="registrationForm.password.$touched || registrationForm.$submitted"><div
                 ng-messages-include="views/messages.html"></div></span>
     </div>
-    <div>
-        <input type="password" name="repassword" placeholder="Repeat Password" ng-model="$ctrl.user.repassword"
+    <div class="form-group">
+        <input class="form-control" type="password" name="repassword" placeholder="Repeat Password"
+               ng-model="$ctrl.user.repassword"
                compare-to="$ctrl.user.password" required minlength="6">
         <span ng-messages="registrationForm.repassword.$error"
               ng-show="registrationForm.repassword.$touched || registrationForm.$submitted"><div
                 ng-messages-include="views/messages.html"></div></span>
     </div>
-    <div>
-        <input type="submit" value="Sign-in">
+    <div class="form-group">
+        <input class="btn btn-primary" type="submit" value="Sign-in">
     </div>
 </form>
 <hr>

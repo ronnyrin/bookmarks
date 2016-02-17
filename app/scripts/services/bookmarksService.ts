@@ -10,7 +10,7 @@ interface IBookmark {
 }
 
 class BookmarksService {
-    bookmarks:IBookmark[];
+    bookmarks;
     ref;
     promise;
 

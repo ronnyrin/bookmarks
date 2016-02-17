@@ -1,5 +1,5 @@
 var app = angular
-    .module('projectsApp', ['ui.router', 'ngMessages', 'firebase']);
+    .module('projectsApp', ['ui.router', 'ngMessages', 'firebase', 'ui.bootstrap']);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/login');

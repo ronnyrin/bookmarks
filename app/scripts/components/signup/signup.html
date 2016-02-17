@@ -1,5 +1,5 @@
 <h1>Sign Up</h1>
-<form name="registrationForm" ng-submit="$ctrl.register(registrationForm.$valid)" novalidate>
+<form name="registrationForm" ng-submit="registrationForm.$valid && $ctrl.register()" novalidate>
     <div>
         <input type="email" name="email" placeholder="Email" ng-model="$ctrl.user.email" required>
         <span ng-messages="registrationForm.email.$error"

@@ -4,18 +4,12 @@
 
 class loginController {
 
-    user:IUser;
-
     constructor(private $state) {
 
     }
 
-    login(isValid:boolean):boolean {
-        if (!isValid) {
-            return false;
-        }
-
-        console.log(this.user);
+    login(user) {
+        console.log(user);
         this.$state.go('list');
         return true;
     }

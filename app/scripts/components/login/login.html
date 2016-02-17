@@ -1,5 +1,5 @@
 <h1>Login</h1>
-<form name="loginForm" ng-submit="$ctrl.login(loginForm.$valid)" novalidate>
+<form name="loginForm" ng-submit="loginForm.$valid && $ctrl.login(user)" novalidate>
     <div>
         <input type="email" name="email" placeholder="Email" ng-model="user.email" required/>
         <span ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched || loginForm.$submitted"><div

@@ -1,14 +1,18 @@
 <div>
-    <section class="filters">
-        <span>Search:</span>
-        <input type="text" ng-model="searchText.title" placeholder="type here.."/>
-        <span>Order By:</span>
-        <select ng-model="$ctrl.predicate">
-            <option value="creationDate">By Date</option>
-            <option value="title">By Title</option>
-        </select>
-    </section>
-    <button ng-click="$ctrl.addBookmark()">Add</button>
-    <bookmark ng-repeat="bookmark in $ctrl.bookmarks | filter:searchText | orderBy:$ctrl.predicate:$ctrl.reverse"
-              bookmark="bookmark" on-bookmark-remove="$ctrl.removeBookmark(id)"></bookmark>
+    <h1>Bookmark List</h1>
+    <div ng-show="$ctrl.loading">Loading...</div>
+    <div ng-show="!$ctrl.loading">
+        <section class="filters">
+            <span>Search:</span>
+            <input type="text" ng-model="searchText.title" placeholder="type here.."/>
+            <span>Order By:</span>
+            <select ng-model="$ctrl.predicate">
+                <option value="creationDate">By Date</option>
+                <option value="title">By Title</option>
+            </select>
+        </section>
+        <button ng-click="$ctrl.addBookmark()">Add</button>
+        <bookmark ng-repeat="bookmark in $ctrl.bookmarks | filter:searchText | orderBy:$ctrl.predicate:$ctrl.reverse"
+                  bookmark="bookmark" on-bookmark-remove="$ctrl.removeBookmark(id)"></bookmark>
+    </div>
 </div>

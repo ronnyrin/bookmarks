@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "bookmark1",
+    "creationDate": "1455540591608"
+  },
+  {
+    "id": 2,
+    "title": "bookmark2",
+    "creationDate": "1125540511608"
+  },
+  {
+    "id": 4,
+    "title": "bookmark3",
+    "creationDate": "1452510591608"
+  }
+]

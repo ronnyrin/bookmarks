@@ -29,10 +29,6 @@ class BookmarksListControllers {
     removeBookmark(id:number) {
         this.bookmarksService.remove(id);
     }
-
-    //get bookmarks() {
-    //    return this.bookmarksService.bookmarks;
-    //}
 }
 
 angular

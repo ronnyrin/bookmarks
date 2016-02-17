@@ -1,15 +1,15 @@
 <h1>Login</h1>
-<form ng-submit="" novalidate>
+<form name="loginForm" ng-submit="$ctrl.login(loginForm.$valid)" novalidate>
     <div>
-        <input type="text" placeholder="Email" ng-model="user.email" required/>
+        <input type="email" name="email" placeholder="Email" ng-model="user.email" required/>
+        <span ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched"><div
+                ng-messages-include="views/messages.html"></div></span>
     </div>
     <div>
-        <input type="text" placeholder="Password" ng-model="user.password" required>
+        <input type="password" name="password" placeholder="Password" ng-model="user.password" required>
     </div>
     <div>
-        <a ui-sref="list">
-            <input type="submit" value="Login">
-        </a>
+        <input type="submit" value="Login">
     </div>
 </form>
 <hr>

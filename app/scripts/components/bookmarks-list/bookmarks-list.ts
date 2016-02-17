@@ -6,10 +6,19 @@ class BookmarksListControllers {
 
     predicate:string;
     reverse:boolean;
+    loading:boolean;
+    bookmarks:IBookmark[];
 
     constructor(private bookmarksService:BookmarksService) {
         this.predicate = 'creationDate';
         this.reverse = true;
+        this.loading = true;
+
+        this.bookmarksService.loadBookmarks().then(response => {
+            this.bookmarks = response;
+            this.loading = false;
+        });
+
     }
 
     addBookmark() {
@@ -21,15 +30,15 @@ class BookmarksListControllers {
         this.bookmarksService.remove(id);
     }
 
-    get bookmarks() {
-        return this.bookmarksService.bookmarks;
-    }
+    //get bookmarks() {
+    //    return this.bookmarksService.bookmarks;
+    //}
 }
 
 angular
     .module('projectsApp')
     .controller('bookmarksListControllers', BookmarksListControllers)
-    .component('bookmarksList',{
+    .component('bookmarksList', {
         controller: 'bookmarksListControllers',
         templateUrl: 'scripts/components/bookmarks-list/bookmarks-list.html',
     });

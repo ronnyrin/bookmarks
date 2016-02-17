@@ -5,13 +5,11 @@
 
 class SignUpController {
 
-
     constructor(private $state) {
 
     }
 
     register(user) {
-        console.log(user);
         this.$state.go('list');
         return true;
     }

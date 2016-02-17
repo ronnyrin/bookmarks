@@ -11,24 +11,9 @@ interface IBookmark {
 class BookmarksService {
     bookmarks:IBookmark[];
 
-    constructor() {
-        this.bookmarks = [
-            {
-                'id': 1,
-                'title': 'bookmark1',
-                'creationDate': '1455540591608'
-            },
-            {
-                'id': 2,
-                'title': 'bookmark2',
-                'creationDate': '1125540511608'
-            },
-            {
-                'id': 4,
-                'title': 'bookmark3',
-                'creationDate': '1452510591608'
-            }
-        ];
+    constructor(private $q) {
+        this.bookmarks = [];
+
     }
 
     create(title):IBookmark {
@@ -51,6 +36,33 @@ class BookmarksService {
         }
         return -1;
     };
+
+    loadBookmarks() {
+        var deferred = this.$q.defer();
+
+        setTimeout(function () {
+            this.bookmarks = [
+                {
+                    'id': 1,
+                    'title': 'bookmark1',
+                    'creationDate': '1455540591608'
+                },
+                {
+                    'id': 2,
+                    'title': 'bookmark2',
+                    'creationDate': '1125540511608'
+                },
+                {
+                    'id': 4,
+                    'title': 'bookmark3',
+                    'creationDate': '1452510591608'
+                }
+            ];
+            deferred.resolve(this.bookmarks);
+        }.bind(this), 1000);
+
+        return deferred.promise;
+    }
 
     remove(id:number) {
         var index = this.findById(id);

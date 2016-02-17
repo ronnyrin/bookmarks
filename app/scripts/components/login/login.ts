@@ -9,7 +9,6 @@ class loginController {
     }
 
     login(user) {
-        console.log(user);
         this.$state.go('list');
         return true;
     }

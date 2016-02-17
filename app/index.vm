@@ -10,6 +10,7 @@
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.min.js"></script>
 
         <script src="scripts/app.js"></script>
         <script src="scripts/components/bookmarks-list/bookmarks-list.js"></script>
@@ -17,6 +18,7 @@
         <script src="scripts/components/login/login.js"></script>
         <script src="scripts/components/signup/signup.js"></script>
         <script src="scripts/services/bookmarksService.js"></script>
+        <script src="scripts/utils/compareTo.ts"></script>
 
         <ui-view></ui-view>
     </body>

@@ -1,10 +1,10 @@
 <h1>Login</h1>
-<form>
+<form ng-submit="" novalidate>
     <div>
-        <input type="text" placeholder="Email"/>
+        <input type="text" placeholder="Email" ng-model="user.email" required/>
     </div>
     <div>
-        <input type="text" placeholder="Password">
+        <input type="text" placeholder="Password" ng-model="user.password" required>
     </div>
     <div>
         <a ui-sref="list">

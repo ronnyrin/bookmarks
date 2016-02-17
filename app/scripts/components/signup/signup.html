@@ -1,13 +1,20 @@
 <h1>Sign Up</h1>
-<form>
+<form name="registrationForm" ng-submit="" novalidate>
     <div>
-        <input type="text" placeholder="Email"/>
+        <input type="email" name="email" placeholder="Email" ng-model="$ctrl.user.email" required>
+        <span ng-messages="registrationForm.email.$error" ng-show="registrationForm.email.$touched"><div
+                ng-messages-include="views/messages.html"></div></span>
     </div>
     <div>
-        <input type="text" placeholder="Password">
+        <input type="password" name="password" placeholder="Password" ng-model="$ctrl.user.password" required>
+        <span ng-messages="registrationForm.password.$error" ng-show="registrationForm.password.$touched"><div
+                ng-messages-include="views/messages.html"></div></span>
     </div>
     <div>
-        <input type="text" placeholder="Repeat Password">
+        <input type="password" name="repassword" placeholder="Repeat Password" ng-model="$ctrl.user.repassword"
+               compare-to="$ctrl.user.password" required>
+        <span ng-messages="registrationForm.repassword.$error" ng-show="registrationForm.repassword.$touched"><div
+                ng-messages-include="views/messages.html"></div></span>
     </div>
     <div>
         <input type="submit" value="Sign-in">

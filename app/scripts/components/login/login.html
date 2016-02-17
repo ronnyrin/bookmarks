@@ -2,11 +2,13 @@
 <form name="loginForm" ng-submit="$ctrl.login(loginForm.$valid)" novalidate>
     <div>
         <input type="email" name="email" placeholder="Email" ng-model="user.email" required/>
-        <span ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched"><div
+        <span ng-messages="loginForm.email.$error" ng-show="loginForm.email.$touched || loginForm.$submitted"><div
                 ng-messages-include="views/messages.html"></div></span>
     </div>
     <div>
         <input type="password" name="password" placeholder="Password" ng-model="user.password" required>
+         <span ng-messages="loginForm.password.$error" ng-show="loginForm.password.$touched || loginForm.$submitted"><div
+                 ng-messages-include="views/messages.html"></div></span>
     </div>
     <div>
         <input type="submit" value="Login">

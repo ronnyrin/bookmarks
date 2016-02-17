@@ -13,7 +13,7 @@
         "scripts/components/login/login.ts",
         "scripts/components/signup/signup.ts",
         "scripts/services/bookmarksService.ts",
-        "scripts/utils/compareTo.ts",
+        "scripts/directives/compareTo.ts",
         "typings/tsd.d.ts"
     ]
 }

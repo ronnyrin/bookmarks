@@ -18,7 +18,7 @@
         <script src="scripts/components/login/login.js"></script>
         <script src="scripts/components/signup/signup.js"></script>
         <script src="scripts/services/bookmarksService.js"></script>
-        <script src="scripts/utils/compareTo.ts"></script>
+        <script src="scripts/directives/compareTo.js"></script>
 
         <ui-view></ui-view>
     </body>

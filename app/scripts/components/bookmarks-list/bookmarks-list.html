@@ -15,8 +15,11 @@
                 </select>
             </div>
         </section>
-        <button class="btn btn-primary" ng-click="$ctrl.addBookmark()">Add</button>
-        <bookmark ng-repeat="bookmark in $ctrl.bookmarks | filter:searchText | orderBy:$ctrl.predicate:$ctrl.reverse"
+        <div>
+            <button class="btn btn-primary" ng-click="$ctrl.addBookmark()">Add</button>
+        </div>
+        <bookmark ng-click="$ctrl.editBookmark(bookmark)"
+                  ng-repeat="bookmark in $ctrl.bookmarks | filter:searchText | orderBy:$ctrl.predicate:$ctrl.reverse"
                   bookmark="bookmark" on-bookmark-remove="$ctrl.removeBookmark(bookmark)"></bookmark>
     </div>
 </div>

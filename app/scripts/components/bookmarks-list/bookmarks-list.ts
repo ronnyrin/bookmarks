@@ -9,7 +9,8 @@ class BookmarksListControllers {
     loading:boolean;
     bookmarks:IBookmark[];
 
-    constructor(private bookmarksService:BookmarksService) {
+    constructor(private bookmarksService:BookmarksService,
+                private $uibModal) {
         this.predicate = 'creationDate';
         this.reverse = true;
         this.loading = true;
@@ -29,6 +30,19 @@ class BookmarksListControllers {
     removeBookmark(bookmark) {
         this.bookmarksService.remove(bookmark);
     }
+
+    editBookmark(bookmark) {
+        var modalInstance = this.$uibModal.open({
+            templateUrl: 'scripts/components/bookmark-edit/bookmark-edit.html',
+            controller: 'bookmarkEditModal',
+            controllerAs: 'bookmarkEditCtrl',
+            resolve: {
+                bookmark: bookmark
+            }
+        });
+
+        return modalInstance.result;
+    };
 }
 
 angular

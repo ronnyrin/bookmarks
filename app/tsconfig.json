@@ -8,12 +8,13 @@
     ],
     "files": [
         "scripts/app.ts",
+        "scripts/components/bookmark-edit/bookmark-edit.ts",
         "scripts/components/bookmark/bookmark.ts",
         "scripts/components/bookmarks-list/bookmarks-list.ts",
         "scripts/components/login/login.ts",
         "scripts/components/signup/signup.ts",
-        "scripts/services/bookmarksService.ts",
         "scripts/directives/compareTo.ts",
+        "scripts/services/bookmarksService.ts",
         "typings/tsd.d.ts"
     ]
 }

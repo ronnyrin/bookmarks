@@ -42,7 +42,8 @@ class BookmarksListControllers {
         });
 
         return modalInstance.result.then(response => {
-            this.bookmarksService.edit(response);
+            bookmark.title = response.title;
+            this.bookmarksService.edit(bookmark);
         });
     }
 }

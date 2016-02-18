@@ -25,7 +25,7 @@ class BookmarksListControllers {
     addBookmark() {
         var bookmark:IBookmark = this.bookmarksService.create('some title');
         this.bookmarksService.add(bookmark);
-    };
+    }
 
     removeBookmark(bookmark) {
         this.bookmarksService.remove(bookmark);
@@ -41,8 +41,10 @@ class BookmarksListControllers {
             }
         });
 
-        return modalInstance.result;
-    };
+        return modalInstance.result.then(response => {
+            this.bookmarksService.edit(response);
+        });
+    }
 }
 
 angular

@@ -30,6 +30,10 @@ class BookmarksService {
         this.bookmarks.$add(bookmark);
     };
 
+    edit(bookmark) {
+        this.bookmarks.$save(bookmark);
+    }
+
     findById(id) {
         for (var i = 0; i < this.bookmarks.length; i++) {
             if (this.bookmarks[i].id === id) {

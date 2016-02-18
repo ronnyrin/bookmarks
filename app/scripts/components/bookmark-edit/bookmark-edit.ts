@@ -12,7 +12,7 @@ class BookmarkEditModal {
 
     ok() {
         this.$uibModalInstance.close(this.bookmark);
-    };
+    }
 
     cancel() {
         this.$uibModalInstance.dismiss();
